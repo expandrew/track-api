@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 
+from django.utils import timezone
+
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 
@@ -14,3 +16,5 @@ class Item(models.Model):
     item_type = models.CharField(max_length=64)
     privacy = models.CharField(max_length=1, choices=PRIVACY_LEVELS)
     data = JSONField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
