@@ -7,14 +7,19 @@ from django.contrib.postgres.fields import JSONField
 
 class Item(models.Model):
     PRIVACY_LEVELS = (
-        ('1', 'Public'),
-        ('2', 'Semi-Public'),
-        ('3', 'Semi-Private'),
-        ('4', 'Private')
+        ('1', '[1] Public'),
+        ('2', '[2] Semi-Public'),
+        ('3', '[3] Semi-Private'),
+        ('4', '[4] Private')
     )
 
-    item_type = models.CharField(max_length=64)
-    privacy = models.CharField(max_length=1, choices=PRIVACY_LEVELS)
-    data = JSONField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    ITEM_TYPES = (
+        ('note', 'Note'),
+        ('bookmark', 'Bookmark')
+    )
+
+    item_type = models.CharField('Item Type', max_length=64, choices=ITEM_TYPES)
+    privacy = models.CharField('Privacy Level', max_length=1, choices=PRIVACY_LEVELS)
+    data = JSONField('Item Data')
+    created_at = models.DateTimeField('Created Date', auto_now_add=True)
+    updated_at = models.DateTimeField('Updated Date', auto_now=True)
