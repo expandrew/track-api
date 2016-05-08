@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 
+
 class Item(models.Model):
     PRIVACY_LEVELS = (
         ('1', '[1] Public'),
