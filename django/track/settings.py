@@ -21,10 +21,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "&u=nkasr99n-j+6)_a5egyz2#4j37dj6n1-=q!&7zicerdesn)"
+SECRET_KEY = os.environ.get('SECRET_KEY') or "&u=nkasr99n-j+6)_a5egyz2#4j37dj6n1-=q!&7zicerdesn)"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG') or False
 
 # Application definition
 
@@ -132,5 +132,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # REST framework
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
+    'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
     'PAGE_SIZE': 10
 }
