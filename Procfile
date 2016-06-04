@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath django track.wsgi --log-file -
+web: gunicorn --pythonpath django track.wsgi --log-file - --reload
