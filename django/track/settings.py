@@ -151,3 +151,10 @@ REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
     'PAGE_SIZE': 10
 }
+
+# REST framework JWT
+JWT_AUTH = {
+    'JWT_RESPONSE_PAYLOAD_HANDLER':
+    'track.utils.jwt_response_payload_handler',
+}
+
