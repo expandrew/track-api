@@ -11,7 +11,7 @@ router.register(r'items', views.ItemViewSet)
 
 urlpatterns = [
     url(r'^v1/', include(router.urls, namespace='v1')),
-    url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^auth/token/', obtain_jwt_token),
+    url(r'^v1/auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^v1/auth/token/', obtain_jwt_token, name="obtain_jwt_token"),
     url(r'^$', RedirectView.as_view(url='/api/v1/')),
 ]
