@@ -149,7 +149,7 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
-    'PAGE_SIZE': 10
+    # 'PAGE_SIZE': 10
 }
 
 # REST framework JWT
