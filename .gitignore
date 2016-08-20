@@ -3,4 +3,5 @@ venv
 staticfiles
 .env
 .env.django
+.env.rails
 db.sqlite3
