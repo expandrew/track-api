@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath django track.wsgi --log-file - --log-level DEBUG --reload

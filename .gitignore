@@ -2,4 +2,5 @@ venv
 *.pyc
 staticfiles
 .env
+.env.django
 db.sqlite3
